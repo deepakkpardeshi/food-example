@@ -2,6 +2,8 @@ import React from 'react'
 import { Text, View, StyleSheet, FlatList } from 'react-native'
 import ResultDetails from '../components/ResultDetails'
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
+import { withNavigation } from 'react-navigation'
+
 
 const ResultList = ( { name, results, navigation  }) => {
     return <View>
@@ -13,7 +15,7 @@ const ResultList = ( { name, results, navigation  }) => {
         data={results}
         keyExtractor={(item) => item.id}
             renderItem={({ item }) => {
-                return <TouchableWithoutFeedback onPress={() => { navigation.push('Details') }}>
+                return <TouchableWithoutFeedback onPress={() => { navigation.push('Details', {id : item.id}) }}>
                     <View>
                         <ResultDetails
                             imageName={item.avatar}
@@ -36,4 +38,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default ResultList;
+export default withNavigation(ResultList);

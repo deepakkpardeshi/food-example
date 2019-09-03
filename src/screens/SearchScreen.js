@@ -17,14 +17,14 @@ const SearchScreen = (props) => {
         {errorMessage ? <Text>${errorMessage}</Text> : null}
         <ScrollView>
             <ResultList
-                navigation={props.navigation}
+                // navigation={props.navigation}
                 results={results}
                 name='cheap' />
             <ResultList
-                navigation={props.navigation}
+                // navigation={props.navigation}
                 results={results} name='budget' />
             <ResultList
-                navigation={props.navigation}
+                // navigation={props.navigation}
                 results={results} name='luxury' />
         </ScrollView>
     </View>
